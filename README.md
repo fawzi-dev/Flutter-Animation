@@ -1,17 +1,3 @@
 # Flutter Animation
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:[untitled.webm](https://github.com/fawzitheprogrammer/Flutter-Animation/assets/84202263/b86f0280-9811-4813-971d-446298f388dc)
-
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![align](https://github.com/fawzitheprogrammer/Flutter-Animation/assets/84202263/0757f699-fd5b-48d9-a795-324e736f99cf)
