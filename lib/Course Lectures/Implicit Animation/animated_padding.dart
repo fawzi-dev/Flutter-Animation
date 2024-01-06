@@ -16,7 +16,7 @@ class _AnimatedPaddingLectureState extends State<AnimatedPaddingLecture> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Animated Align'),
+        title: const Text('Animated Padding'),
       ),
       body: GestureDetector(
         onTap: () {

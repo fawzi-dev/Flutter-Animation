@@ -42,7 +42,7 @@ class _SizeTransitionLectureState extends State<SizeTransitionLecture>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Animated Align'),
+        title: const Text('Size Transition'),
       ),
       body: Column(
         children: [

@@ -36,7 +36,7 @@ class _AnimatedListLectureState extends State<AnimatedListLecture> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Animated Align'),
+        title: const Text('Animated List'),
       ),
       body: AnimatedList(
         key: _listKey,

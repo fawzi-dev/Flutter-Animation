@@ -65,7 +65,7 @@ class _PositionedTransitionLectureState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Animated Align'),
+        title: const Text('Positioned Transition'),
       ),
       body: Stack(
         //alignment: Alignment.center,

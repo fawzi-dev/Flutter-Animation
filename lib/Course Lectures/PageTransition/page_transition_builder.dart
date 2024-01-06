@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class PageTransitionExample extends PageRouteBuilder {
   dynamic page;
+  AnimationTypes animationTypes;
 
-  PageTransitionExample(this.page)
+  PageTransitionExample(this.page, this.animationTypes)
       : super(
           pageBuilder: (context, animation, secondaryAnimation) => page,
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
@@ -14,7 +15,6 @@ class PageTransitionExample extends PageRouteBuilder {
 
             const curves = Curves.decelerate;
             const reverseCurves = Curves.decelerate;
-
 
             // Sliding page transition
             var slideTransition =
@@ -41,22 +41,63 @@ class PageTransitionExample extends PageRouteBuilder {
               CurvedAnimation(parent: animation, curve: curves),
             );
 
-            return Align(
-              alignment: Alignment.center,
-              child: SlideTransition(
-                position: slideTransition,
+            if (animationTypes == AnimationTypes.slide) {
+              return Align(
+                alignment: Alignment.center,
+                child: SlideTransition(
+                  position: slideTransition,
+                  child: child,
+                ),
+              );
+            } else if (animationTypes == AnimationTypes.fade) {
+              return Align(
+                alignment: Alignment.center,
                 child: FadeTransition(
                   opacity: fadeTransition,
-                  child: ScaleTransition(
-                    scale: scaleTransition,
-                    child: RotationTransition(
-                      turns: rotationTransition,
-                      child: child,
-                    ),
-                  ),
+                  child: child,
                 ),
-              ),
-            );
+              );
+            } else if (animationTypes == AnimationTypes.scale) {
+              return Align(
+                alignment: Alignment.center,
+                child: ScaleTransition(
+                  scale: scaleTransition,
+                  child: child,
+                ),
+              );
+            } else if (animationTypes == AnimationTypes.rotation) {
+              return Align(
+                alignment: Alignment.center,
+                child: RotationTransition(
+                  turns: rotationTransition,
+                  child: child,
+                ),
+              );
+            } else {
+              return Align(
+                alignment: Alignment.center,
+                child: child,
+              );
+            }
+
+            // return Align(
+            //   alignment: Alignment.center,
+            //   child: SlideTransition(
+            //     position: slideTransition,
+            //     child: FadeTransition(
+            //       opacity: fadeTransition,
+            //       child: ScaleTransition(
+            //         scale: scaleTransition,
+            //         child: RotationTransition(
+            //           turns: rotationTransition,
+            //           child: child,
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // );
           },
         );
 }
+
+enum AnimationTypes { slide, fade, scale, rotation }

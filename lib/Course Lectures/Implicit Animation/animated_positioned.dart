@@ -17,7 +17,7 @@ class _AnimatedPositionedLectureState extends State<AnimatedPositionedLecture> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Animated Align'),
+        title: const Text('Animated Positioned'),
       ),
       body: GestureDetector(
         onTap: () {

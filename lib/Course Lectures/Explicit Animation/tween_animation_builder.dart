@@ -18,7 +18,7 @@ class _TweenAnimationBuilderLectureState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Animated Align'),
+        title: const Text('Tween Animation Builder'),
       ),
       body: TweenAnimationBuilder<double>(
         builder: (BuildContext context, double value, Widget? child) {

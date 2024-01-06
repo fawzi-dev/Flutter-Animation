@@ -11,6 +11,7 @@ import 'package:animation1/Course%20Lectures/Implicit%20Animation/animated_opaci
 import 'package:animation1/Course%20Lectures/Implicit%20Animation/animated_padding.dart';
 import 'package:animation1/Course%20Lectures/Implicit%20Animation/animated_physical_model.dart';
 import 'package:animation1/Course%20Lectures/Implicit%20Animation/animated_switcher.dart';
+import 'package:animation1/Course%20Lectures/PageTransition/page_transition_builder.dart';
 import 'package:animation1/Course%20Lectures/PageTransition/screen_one.dart';
 import 'package:flutter/material.dart';
 
@@ -27,57 +28,71 @@ class AppRoot extends StatefulWidget {
 
 class _AppRootState extends State<AppRoot> {
   Map<String, Widget> implicitAnimationLecture = {
-    'Lecture 1': const AnimatedAlignLecture(),
-    'Lecture 2': const AnimatedContainerLecture(),
-    'Lecture 3': const AnimatedTextStyleLecture(),
-    'Lecture 4': const AnimatedOpactiyLecture(),
-    'Lecture 5': const AnimatedPaddingLecture(),
-    'Lecture 6': const AnimatedPhysicalModelLecture(),
-    'Lecture 7': const AnimatedPositionedLecture(),
-    'Lecture 8': const AnimiatedSwitcherLecture(),
-    'Lecture 9': const AnimatedListLecture()
+    'Align': const AnimatedAlignLecture(),
+    'Container': const AnimatedContainerLecture(),
+    'TextStyle': const AnimatedTextStyleLecture(),
+    'Opacity': const AnimatedOpactiyLecture(),
+    'Padding': const AnimatedPaddingLecture(),
+    'Physical Modal': const AnimatedPhysicalModelLecture(),
+    'Positioned': const AnimatedPositionedLecture(),
+    'Switcher': const AnimiatedSwitcherLecture(),
+    'List': const AnimatedListLecture()
   };
 
   Map<String, Widget> explicitAnimationLecture = {
     'Positioned Transition': const PositionedTransitionLecture(),
     'Size Transition': const SizeTransitionLecture(),
     'Rotation Transition': const RotationTransitionLecture(),
-    'Animated Builder 4': const AnimatedBuilderLecture(),
+    'Animated Builder': const AnimatedBuilderLecture(),
     'Tween Animation Builder': const TweenAnimationBuilderLecture(),
     'Default Textstyle Animation': const DefaultTextStyleAnimationLecture(),
     'Indexed Animation': const IndexedStackAnimationLecture(),
   };
 
   Map<String, Widget> pageAnimationLecture = {
-    'Lecture 1': const ScreenOne(),
+    'Fade Page Transition': const ScreenOne(
+      types: AnimationTypes.fade,
+    ),
+    'Scale Page Transition': const ScreenOne(
+      types: AnimationTypes.scale,
+    ),
+    'Rotation Page Transition': const ScreenOne(
+      types: AnimationTypes.rotation,
+    ),
+    'Slide Page Transition': const ScreenOne(
+      types: AnimationTypes.slide,
+    ),
   };
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-      child: SafeArea(
-        child: Column(
-          children: [
-            LectureTile(
-              listOfLectures: implicitAnimationLecture,
-              label: 'Implicit Animation',
-              animationColor: Colors.indigo,
-            ),
-            LectureTile(
-              listOfLectures: explicitAnimationLecture,
-              label: 'Explicit Animation',
-              animationColor: Colors.redAccent,
-            ),
-            LectureTile(
-              listOfLectures: pageAnimationLecture,
-              label: 'Page Transition',
-              animationColor: Colors.deepOrange,
-            )
-          ],
+        appBar: AppBar(
+          title: const Text('Flutter Animation'),
         ),
-      ),
-    ));
+        body: SingleChildScrollView(
+          child: SafeArea(
+            child: Column(
+              children: [
+                LectureTile(
+                  listOfLectures: implicitAnimationLecture,
+                  label: 'Implicit Animation',
+                  animationColor: Colors.indigo,
+                ),
+                LectureTile(
+                  listOfLectures: explicitAnimationLecture,
+                  label: 'Explicit Animation',
+                  animationColor: Colors.redAccent,
+                ),
+                LectureTile(
+                  listOfLectures: pageAnimationLecture,
+                  label: 'Page Transition',
+                  animationColor: Colors.deepOrange,
+                )
+              ],
+            ),
+          ),
+        ));
   }
 }
 
@@ -118,7 +133,9 @@ class LectureTile extends StatelessWidget {
                 color: animationColor,
               ),
               child: Text(
-                listOfLectures.keys.elementAt(index),
+                label == 'Implicit Animation'
+                    ? 'Animated ${listOfLectures.keys.elementAt(index)} '
+                    : listOfLectures.keys.elementAt(index),
                 style: Theme.of(context)
                     .textTheme
                     .labelMedium!

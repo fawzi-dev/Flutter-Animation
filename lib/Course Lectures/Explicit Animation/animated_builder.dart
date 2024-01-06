@@ -36,7 +36,7 @@ class _AnimatedBuilderLectureState extends State<AnimatedBuilderLecture>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Animated Align'),
+        title: const Text('Animated Builder'),
       ),
       body: AnimatedBuilder(
         animation: animationController,

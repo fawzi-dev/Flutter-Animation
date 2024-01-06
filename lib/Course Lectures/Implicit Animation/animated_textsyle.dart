@@ -21,7 +21,7 @@ class _AnimatedTextStyleLectureState extends State<AnimatedTextStyleLecture> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Animated Align'),
+        title: const Text('Animated Textstyle'),
       ),
       body: GestureDetector(
         onTap: () {

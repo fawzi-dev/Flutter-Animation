@@ -16,7 +16,7 @@ class _AnimatedOpactiyLectureState extends State<AnimatedOpactiyLecture> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Animated Align'),
+        title: const Text('Animated Opacity'),
       ),
       body: GestureDetector(
         onTap: () {

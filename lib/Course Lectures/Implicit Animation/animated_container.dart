@@ -18,7 +18,7 @@ class AnimatedContainerLectureState extends State<AnimatedContainerLecture> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Animated Align'),
+        title: const Text('Animated Container'),
       ),
       body: GestureDetector(
         onTap: () {
