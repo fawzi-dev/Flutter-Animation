@@ -1,6 +1,7 @@
 # Flutter Animation
 
 <table>
+  <th>Implicit Animation</th>
   <tr>
    <td>
       <h3>Animated Align</h3>
