@@ -1,4 +1,5 @@
 # Flutter Animation
+This is one of my recent project based on a course, which is like documentation for <strong>Flutter Animation</strong>. It is open-source and for any question you can contact me here <a href="https://www.instagram.com/fawzitheprogrammer/">Here on Instagram</a>
 
 <table>
   <h1>Implicit Animation</h1>
