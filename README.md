@@ -39,5 +39,27 @@
     <img src="https://github.com/fawzitheprogrammer/Flutter-Animation/assets/84202263/8cc75e49-046b-499c-865a-839422aa5624" style="width:150px;height:350px;">
    </td>
    </tr>
+</table>
+<br>
+<table>
+  <h1>Page Transition</h1>
+  <tr>
+   <td>
+      <h3>Fade Transition</h3>
+    <img src="https://github.com/fawzitheprogrammer/Flutter-Animation/assets/84202263/49e2ddba-1850-4554-a902-1cd6dde6da55" style="width:150px;height:350px;">
+   </td>
+    <td>
+      <h3>Scale Transition</h3>
+    <img src="https://github.com/fawzitheprogrammer/Flutter-Animation/assets/84202263/6a40bd87-04f3-4d96-b3a0-565915d79578" style="width:150px;height:350px;">
+   </td>
+    <td>
+      <h3>Rotation Transition</h3>
+    <img src="https://github.com/fawzitheprogrammer/Flutter-Animation/assets/84202263/c9c3d038-bb8e-40b8-83f8-faa8d46847b1" style="width:150px;height:350px;">
+   </td>
+    <td>
+      <h3>Slide Transition</h3>
+    <img src="https://github.com/fawzitheprogrammer/Flutter-Animation/assets/84202263/1ea4ca9c-e05e-440b-b3eb-9190af453d29" style="width:150px;height:350px;">
+   </td>
+  </tr>
 
 </table>
