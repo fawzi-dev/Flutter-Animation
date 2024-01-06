@@ -6,7 +6,8 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+A few resources to get you started if this is your first Flutter project:[untitled.webm](https://github.com/fawzitheprogrammer/Flutter-Animation/assets/84202263/b86f0280-9811-4813-971d-446298f388dc)
+
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
