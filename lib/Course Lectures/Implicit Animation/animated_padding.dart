@@ -12,6 +12,14 @@ class AnimatedPaddingLecture extends StatefulWidget {
 class _AnimatedPaddingLectureState extends State<AnimatedPaddingLecture> {
   bool isPadded = true;
 
+  void startAnimation() {
+    if (mounted) {
+      setState(() {
+        isPadded = !isPadded;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,9 +28,7 @@ class _AnimatedPaddingLectureState extends State<AnimatedPaddingLecture> {
       ),
       body: GestureDetector(
         onTap: () {
-          setState(() {
-            isPadded = true;
-          });
+          startAnimation();
         },
         child: GridView(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -32,9 +38,8 @@ class _AnimatedPaddingLectureState extends State<AnimatedPaddingLecture> {
             4,
             (index) => AnimatedPadding(
               duration: kDuration,
-              padding: isPadded
-                  ? const EdgeInsets.all(4)
-                  : const EdgeInsets.all(20),
+              padding:
+                  isPadded ? const EdgeInsets.all(4) : const EdgeInsets.all(20),
               child: ColoredBox(
                 color: Colors.amber,
                 child: Image.network(AssetsPath.jerry),
@@ -45,9 +50,7 @@ class _AnimatedPaddingLectureState extends State<AnimatedPaddingLecture> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {
-            isPadded = false;
-          });
+          startAnimation();
         },
         elevation: 0,
         child: const Icon(Icons.animation_rounded),

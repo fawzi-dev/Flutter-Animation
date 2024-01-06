@@ -15,6 +15,14 @@ class _AnimatedPhysicalModelLectureState
     extends State<AnimatedPhysicalModelLecture> {
   bool isVisible = false;
 
+  void startAnimation() {
+    if (mounted) {
+      setState(() {
+        isVisible = !isVisible;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,9 +31,7 @@ class _AnimatedPhysicalModelLectureState
       ),
       body: GestureDetector(
         onTap: () {
-          setState(() {
-            isVisible = !isVisible;
-          });
+          startAnimation();
         },
         child: Center(
           child: AnimatedPhysicalModel(
@@ -46,9 +52,7 @@ class _AnimatedPhysicalModelLectureState
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {
-            isVisible = false;
-          });
+          startAnimation();
         },
         elevation: 0,
         child: const Icon(Icons.animation_rounded),

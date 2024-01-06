@@ -17,6 +17,31 @@ class _AnimatedTextStyleLectureState extends State<AnimatedTextStyleLecture> {
     letterSpacing: 0,
   );
 
+  bool isAnimate = false;
+
+  void startAnimation() {
+    if (mounted) {
+      setState(
+        () {
+          isAnimate = !isAnimate;
+          textStyle = isAnimate
+              ? const TextStyle(
+                  fontSize: 30,
+                  color: Colors.indigo,
+                  decorationStyle: TextDecorationStyle.dotted,
+                  letterSpacing: 14,
+                )
+              : const TextStyle(
+                  fontSize: 16,
+                  color: Colors.deepOrange,
+                  decorationStyle: TextDecorationStyle.double,
+                  letterSpacing: 0,
+                );
+        },
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,14 +50,7 @@ class _AnimatedTextStyleLectureState extends State<AnimatedTextStyleLecture> {
       ),
       body: GestureDetector(
         onTap: () {
-          setState(() {
-            textStyle = const TextStyle(
-              fontSize: 30,
-              color: Colors.indigo,
-              decorationStyle: TextDecorationStyle.dotted,
-              letterSpacing: 14,
-            );
-          });
+          startAnimation();
         },
         child: Center(
           child: AnimatedDefaultTextStyle(
@@ -44,14 +62,7 @@ class _AnimatedTextStyleLectureState extends State<AnimatedTextStyleLecture> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {
-            textStyle = const TextStyle(
-              fontSize: 16,
-              color: Colors.deepOrange,
-              decorationStyle: TextDecorationStyle.double,
-              letterSpacing: 0,
-            );
-          });
+          startAnimation();
         },
         elevation: 0,
         child: const Icon(Icons.animation_rounded),

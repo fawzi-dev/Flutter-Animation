@@ -27,7 +27,9 @@ class _SizeTransitionLectureState extends State<SizeTransitionLecture>
         curve: Curves.bounceInOut,
       ),
     )..addListener(() {
-        setState(() {});
+        if (mounted) {
+          setState(() {});
+        }
       });
   }
 

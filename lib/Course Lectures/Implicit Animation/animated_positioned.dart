@@ -11,7 +11,14 @@ class AnimatedPositionedLecture extends StatefulWidget {
 }
 
 class _AnimatedPositionedLectureState extends State<AnimatedPositionedLecture> {
-  bool isVisible = false;
+  bool isVisible = true;
+  void startAnimation() {
+    if (mounted) {
+      setState(() {
+        isVisible = !isVisible;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +28,7 @@ class _AnimatedPositionedLectureState extends State<AnimatedPositionedLecture> {
       ),
       body: GestureDetector(
         onTap: () {
-          setState(() {
-            isVisible = !isVisible;
-          });
+          startAnimation();
         },
         child: Stack(
           children: [
@@ -68,9 +73,7 @@ class _AnimatedPositionedLectureState extends State<AnimatedPositionedLecture> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {
-            isVisible = false;
-          });
+          startAnimation();
         },
         elevation: 0,
         child: const Icon(Icons.animation_rounded),

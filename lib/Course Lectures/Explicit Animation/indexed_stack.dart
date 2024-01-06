@@ -46,10 +46,12 @@ class _IndexedStackAnimationLectureState
     if (currentIndex == 3) {
       currentIndex = 0;
     }
-    setState(() {
-      controller.reset();
-      controller.forward();
-    });
+    if (mounted) {
+      setState(() {
+        controller.reset();
+        controller.forward();
+      });
+    }
   }
 
   @override

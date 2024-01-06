@@ -37,9 +37,11 @@ class _TweenAnimationBuilderLectureState
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {
-            opactiyLevel = opactiyLevel == 0 ? 1.0 : 0.0;
-          });
+          if (mounted) {
+            setState(() {
+              opactiyLevel = opactiyLevel == 0 ? 1.0 : 0.0;
+            });
+          }
         },
         elevation: 0,
         child: const Icon(Icons.animation_rounded),

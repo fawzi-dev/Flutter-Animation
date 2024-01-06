@@ -11,6 +11,13 @@ class AnimiatedSwitcherLecture extends StatefulWidget {
 
 class _AnimiatedSwitcherLectureState extends State<AnimiatedSwitcherLecture> {
   bool isVisible = false;
+  void startAnimation() {
+    if (mounted) {
+      setState(() {
+        isVisible = !isVisible;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +27,7 @@ class _AnimiatedSwitcherLectureState extends State<AnimiatedSwitcherLecture> {
       ),
       body: GestureDetector(
         onTap: () {
-          // setState(() {
-          //  // isVisible = true;
-          // });
+          startAnimation();
         },
         child: AnimatedSwitcher(
           duration: kDuration,
@@ -69,9 +74,7 @@ class _AnimiatedSwitcherLectureState extends State<AnimiatedSwitcherLecture> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {
-            isVisible = !isVisible;
-          });
+          startAnimation();
         },
         elevation: 0,
         child: const Icon(Icons.animation_rounded),

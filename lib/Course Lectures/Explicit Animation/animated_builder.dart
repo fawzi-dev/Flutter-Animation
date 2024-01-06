@@ -47,12 +47,14 @@ class _AnimatedBuilderLectureState extends State<AnimatedBuilderLecture>
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          isForward = !isForward;
-          setState(() {
-            isForward
-                ? animationController.forward()
-                : animationController.reverse();
-          });
+          if (mounted) {
+            setState(() {
+              isForward = !isForward;
+              isForward
+                  ? animationController.forward()
+                  : animationController.reverse();
+            });
+          }
         },
         elevation: 0,
         child: const Icon(Icons.animation_rounded),

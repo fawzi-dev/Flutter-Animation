@@ -11,8 +11,18 @@ class AnimatedContainerLecture extends StatefulWidget {
 
 class AnimatedContainerLectureState extends State<AnimatedContainerLecture> {
   Color containerColor = Colors.grey;
-
   Size containerSize = const Size(100, 100);
+  bool animateIt = false;
+
+  void startAnimation() {
+    if (mounted) {
+      setState(() {
+        animateIt = !animateIt;
+        containerColor = animateIt ? Colors.indigo : Colors.grey;
+        containerSize = animateIt ? const Size(300, 300) : const Size(100, 100);
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +32,7 @@ class AnimatedContainerLectureState extends State<AnimatedContainerLecture> {
       ),
       body: GestureDetector(
         onTap: () {
-          setState(() {
-            containerColor = Colors.indigo;
-            containerSize = const Size(300, 300);
-          });
+          startAnimation();
         },
         child: Center(
           child: AnimatedContainer(
@@ -45,11 +52,7 @@ class AnimatedContainerLectureState extends State<AnimatedContainerLecture> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {
-            containerColor = Colors.grey;
-
-            containerSize = const Size(100, 100);
-          });
+          startAnimation();
         },
         elevation: 0,
         child: const Icon(Icons.animation_rounded),

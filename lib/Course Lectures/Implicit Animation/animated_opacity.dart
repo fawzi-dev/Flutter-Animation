@@ -12,6 +12,14 @@ class AnimatedOpactiyLecture extends StatefulWidget {
 class _AnimatedOpactiyLectureState extends State<AnimatedOpactiyLecture> {
   bool isVisible = true;
 
+  void startAnimation() {
+    if (mounted) {
+      setState(() {
+        isVisible = !isVisible;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,9 +28,7 @@ class _AnimatedOpactiyLectureState extends State<AnimatedOpactiyLecture> {
       ),
       body: GestureDetector(
         onTap: () {
-          setState(() {
-            isVisible = true;
-          });
+          startAnimation();
         },
         child: AnimatedOpacity(
           opacity: isVisible ? 1.0 : 0.0,
@@ -33,9 +39,7 @@ class _AnimatedOpactiyLectureState extends State<AnimatedOpactiyLecture> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {
-            isVisible = false;
-          });
+          startAnimation();
         },
         elevation: 0,
         child: const Icon(Icons.animation_rounded),

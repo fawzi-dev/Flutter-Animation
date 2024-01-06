@@ -50,7 +50,9 @@ class _PositionedTransitionLectureState
     ).animate(
       CurvedAnimation(parent: controller, curve: Curves.decelerate),
     )..addListener(() {
-        setState(() {});
+        if (mounted) {
+          setState(() {});
+        }
       });
   }
 

@@ -56,10 +56,12 @@ class _RotationTransitionLectureState extends State<RotationTransitionLecture>
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {
+          if(mounted){
+            setState(() {
             isPositioned = !isPositioned;
             isPositioned ? controller.forward() : controller.reverse();
           });
+          }
         },
         elevation: 0,
         child: const Icon(Icons.animation_rounded),

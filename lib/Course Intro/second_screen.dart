@@ -69,9 +69,7 @@ class _MySecondHomePageState extends State<MySecondHomePage>
                 onPressed: () {
                   PageRouteBuilder(
                       pageBuilder: (context, animation, secondaryAnimation) {
-                    return const MyHomePage(
-                      title: 'ss',
-                    );
+                    return const MyHomePage();
                   });
                 },
                 child: const Text('Go to Next Page'),
