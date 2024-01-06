@@ -1,6 +1,13 @@
 # Flutter Animation
 This is one of my recent project based on a course, which is like documentation for <strong>Flutter Animation</strong>. It is open-source and for any question you can contact me here <a href="https://www.instagram.com/fawzitheprogrammer/">Here on Instagram</a>
 
+please do forget to star ⭐ this project and also you can find me on 👇 :
+<a href="https://www.youtube.com/@FawziTheProgrammer">Youtube</a>
+<a href="https://www.linkedin.com/in/fawzi-gharib-0a3961209/">LinkedIn</a>
+<a href="https://www.facebook.com/fawzitheprogrammer/">Facebook</a>
+
+
+
 <table>
   <h1>Implicit Animation</h1>
   <tr>
